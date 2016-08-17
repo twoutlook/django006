@@ -66,6 +66,17 @@ def cust(request):
     context = {'page_title':'App001 Cust','item_list': item_list}
     return render(request, 'app001/cust.html', context)     
 
+def item001obj(request):
+    if not request.user.is_authenticated:
+        context = {'page_title':'item001-obj-富鈦-壓鑄機','item_list': {}}
+        return render(request, 'app001/item001.html', context)     
+        
+    # item_list = Item001.objects.order_by('field1')[:100]
+    # context = {'page_title':'item001-obj-富鈦-壓鑄機','item_list': item_list}
+    context = {'page_title':'item001-obj-富鈦-壓鑄機','item_list': {}}
+    return render(request, 'app001/item001.html', context)     
+
+
 
 def item001(request):
     if not request.user.is_authenticated:
